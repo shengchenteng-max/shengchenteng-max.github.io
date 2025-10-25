@@ -1,0 +1,19 @@
+{
+  "tabPrinterManager": "打印机管理",
+  "tabPrinterTemplate": "打印模板",
+  "printerName": "打印机名称",
+  "printerNamePlaceholder": "请输入打印机名称",
+  "brand": "设备品牌",
+  "printWidth": "纸张宽度",
+  "status": "状态",
+  "statusOn": "启用",
+  "statusOff": "禁用",
+  "createTime": "创建时间",
+  "addPrinter": "添加打印机",
+  "updatePrinter": "编辑打印机",
+  "printerDeleteTips": "确定要删除该数据吗？",
+  "testPrint": "测试打印",
+  "testPrintTips": "确定测试打印吗",
+  "refreshToken": "授权",
+  "refreshTokenTips": "若易联云打印机在 [测试打印] 时提示 access_token过期或错误，请重新授权，是否重新授权"
+}

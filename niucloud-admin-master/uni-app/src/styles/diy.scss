@@ -1,0 +1,28 @@
+.bg-index {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-size: 100%;
+  background-repeat: no-repeat !important;
+}
+
+:deep(.u-tabbar__placeholder) {
+  display: none !important;
+}
+
+.diy-template-wrap {
+  ::v-deep .diy-group {
+    > .draggable-element.top-fixed-diy {
+      display: none;
+    }
+  }
+
+  /* #ifdef H5 */
+  :deep(.child-diy-template-wrap) {
+    .diy-group .draggable-element.top-fixed-diy {
+      display: block;
+    }
+  }
+
+  /* #endif */
+}

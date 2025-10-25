@@ -1,0 +1,15 @@
+{
+    "memberId":"会员编号",
+	"memberInfoPlaceholder":"请输入会员编码/昵称/手机号搜索",
+	"memberInfo":"会员信息",
+	"mobile":"手机号码",
+    "nickName":"会员昵称",
+    "headimg":"会员头像",
+	"createTime":"签到时间",
+	"days":"连续签到",
+	"day":"天",
+	"dayAward":"日签奖励",
+	"continueAward":"连签奖励",
+	"startDate":"开始时间",
+	"endDate":"结束时间"
+}

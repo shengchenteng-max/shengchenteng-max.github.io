@@ -1,0 +1,21 @@
+@import 'iconfont.css';
+@import 'common.scss';
+
+// 主色调修改
+:root{
+    --el-color-primary: #EF000C;
+    --el-color-primary-light-3: #EF000C;
+    --el-color-primary-light-5: #f49991;
+    --el-color-primary-light-7: #f8c2bd;
+    --el-color-primary-light-8: #fbd6d3;
+    --el-color-primary-light-9: #fff;
+    --el-color-primary-dark-2: #EF000C;
+    --el-price:#E4221C;
+    // 圆角大小
+    --rounded-xl: 100px;
+    --rounded-big: 16px;
+    --rounded-mid: 12px;
+    --rounded-med: 8px;
+    --rounded-small: 6px;
+}
+

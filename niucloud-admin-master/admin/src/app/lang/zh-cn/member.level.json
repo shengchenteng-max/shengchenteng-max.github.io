@@ -1,0 +1,14 @@
+{
+    "levelName":"等级名称",
+    "memberNumber":"会员数量",
+    "memberLabelDeleteTips":"确定要删除该会员登记吗？",
+    "addMemberLevel": "添加会员等级",
+    "levelNamePlaceholder": "请输入等级名称",
+    "memberLevelDeleteTips": "确定要删除该等级吗？",
+    "growth": "等级成长值",
+    "levelBenefits": "等级权益",
+    "levelGifts": "等级礼包",
+    "memberLevel": "会员等级",
+    "growthRule": "成长值规则",
+    "growthDetail": "成长值明细"
+}

@@ -1,0 +1,36 @@
+{extend name="base"/}
+{block name="main"}
+
+<div class="pright layui-form">
+	<h3 class="pr-title">阅读许可协议</h3>
+	<div class="pr-agreement">
+		{:html_entity_decode($install_config['agreement'])}
+	</div>
+	<div class="btn-box">
+		<div class="btn-box-text">
+			<div class="layui-form-item">
+				<input type="checkbox" name="readpact" id="readpact" title="我已经阅读并同意此协议" value="1" lay-skin="primary">
+			</div>
+		</div>
+		<button class="layui-btn" lay-submit lay-filter="go">继续</button>
+	</div>
+</div>
+
+{/block}
+{block name="script"}
+<script>
+	layui.use('form', function () {
+		var form = layui.form;
+
+		form.on('submit(go)', function (data) {
+			var readpact = data.field.readpact;
+			if (readpact == 1) {
+				window.location.href = '{$root_url}/install.php?step=2';
+			} else {
+				error('您必须同意软件许可协议才能安装！');
+			}
+
+		});
+	});
+</script>
+{/block}

@@ -1,0 +1,15 @@
+{
+	"ruleName": "规则名称",
+	"ruleNameTips": "规则名不能为空且最多60个字",
+	"ruleNamePlaceholder": "请输入规则名称",
+	"keywordPlaceholder": "请输入关键字",
+	"contentPlaceholder": "请选择回复内容",
+	"allMatching": "全匹配",
+	"fuzzyMatching": "模糊匹配",
+	"keyword": "关键字",
+	"content": "回复内容",
+	"replyMethod": "回复方式",
+	"replyMethodAll": "全部回复",
+	"replyMethodRand": "随机回复一条",
+	"addReplyContent": "添加回复内容"
+}

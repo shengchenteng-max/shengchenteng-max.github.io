@@ -1,0 +1,94 @@
+{
+    "name": "topthink/think",
+    "description": "the new thinkphp framework",
+    "type": "project",
+    "keywords": [
+        "framework",
+        "thinkphp",
+        "ORM"
+    ],
+    "homepage": "https://www.thinkphp.cn/",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "liu21st",
+            "email": "liu21st@gmail.com"
+        },
+        {
+            "name": "yunwuxin",
+            "email": "448901948@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.0",
+        "topthink/framework": "v8.0.3",
+        "topthink/think-orm": "v3.0.14",
+        "topthink/think-filesystem": "v2.0.2",
+        "topthink/think-multi-app": "v1.0.16",
+        "topthink/think-template": "v3.0.0",
+        "topthink/think-view": "v2.0.0",
+        "topthink/think-captcha": "v3.0.9",
+        "topthink/think-image": "v1.0.7",
+        "firebase/php-jwt": "v5.5.1",
+        "spatie/macroable": "v1.0.1",
+        "dh2y/think-qrcode": "v2.0",
+        "dragonmantank/cron-expression": "v3.3.1",
+        "phpoffice/phpspreadsheet": "v1.28.0",
+        "qiniu/php-sdk": "v7.4.0",
+        "qcloud/cos-sdk-v5": "v2.6.2",
+        "aliyuncs/oss-sdk-php": "v2.6.0",
+        "alibabacloud/client": "v1.5.32",
+        "rmccue/requests": "v2.0.5",
+        "ext-json": "*",
+        "ext-curl": "*",
+        "ext-bcmath": "*",
+        "ext-mbstring": "*",
+        "php-di/php-di": "v7.0.1",
+        "guzzlehttp/guzzle": "7.5",
+        "symfony/psr-http-message-bridge": "v2.2.0",
+        "fastknife/ajcaptcha": "v1.2.1",
+        "kosinix/grafika": "dev-master",
+        "nesbot/carbon": "2.66.0",
+        "ext-zip": "*",
+        "mjaschen/phpgeo": "4.2.0",
+        "tencentcloud/sms": "^3.0",
+        "w7corp/easywechat": "6.7.0",
+        "workerman/workerman": "v4.1.15",
+        "workerman/redis-queue": "v1.2.0",
+        "workerman/crontab": "v1.0.6",
+        "hyperf/pimple": "~2.2.0",
+        "365taofang/huaweicloud-sdk-php-obs": "^3.23",
+        "kkokk/poster": "^2.3",
+        "yansongda/pay": "^3.7"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "v6.0.19",
+        "topthink/think-trace": "v1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "addon\\": "addon",
+            "app\\": "app",
+            "core\\": "core"
+        },
+        "psr-0": {}
+    },
+    "config": {
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "easywechat-composer/easywechat-composer": true
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php think service:discover",
+            "@php think vendor:publish"
+        ]
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer"
+        }
+    }
+}

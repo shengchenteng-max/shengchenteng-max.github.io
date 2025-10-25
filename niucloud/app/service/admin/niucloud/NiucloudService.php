@@ -1,0 +1,125 @@
+<?php
+// +----------------------------------------------------------------------
+// | Niucloud-admin 企业快速开发的多应用管理平台
+// +----------------------------------------------------------------------
+// | 官方网址：https://www.niucloud.com
+// +----------------------------------------------------------------------
+// | niucloud团队 版权所有 开源版本可自由商用
+// +----------------------------------------------------------------------
+// | Author: Niucloud Team
+// +----------------------------------------------------------------------
+
+namespace app\service\admin\niucloud;
+
+use app\dict\sys\ConfigKeyDict;
+use app\service\core\niucloud\CoreAuthService;
+use app\service\core\niucloud\CoreModuleService;
+use app\service\core\sys\CoreConfigService;
+use core\base\BaseAdminService;
+use core\exception\CommonException;
+
+/**
+ * 消息管理服务层
+ */
+class NiucloudService extends BaseAdminService
+{
+    public $core_config_service;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->core_config_service = new CoreConfigService();
+
+    }
+
+    /**
+     * 设置 授权信息
+     * @param $data
+     * @return \app\model\sys\SysConfig|bool|\think\Model
+     */
+    public function setAuthorize($data){
+
+        $data = [
+            'auth_code' => $data['auth_code'],
+            'auth_secret' => $data['auth_secret']
+        ];
+        $service = (new CoreAuthService($data['auth_code'], $data['auth_secret']));
+        $auth_info = $service->getAuthInfo()['data'] ?? [];
+        if (empty($auth_info)) throw new CommonException('AUTH_NOT_EXISTS');
+        $service->clearAccessToken();
+        return $this->core_config_service->setConfig(ConfigKeyDict::NIUCLOUD_CONFIG, $data);
+    }
+
+    /**
+     * 获取授权信息
+     * @return mixed|string[]
+     */
+    public function getAuthorize(){
+        $info = $this->core_config_service->getConfig(ConfigKeyDict::NIUCLOUD_CONFIG);
+        if(empty($info))
+        {
+            $info = [];
+            $info['value'] = [
+                'auth_code' => '',
+                'auth_secret' => ''
+            ];
+        }
+        return $info['value'];
+    }
+
+    /**
+     * 获取框架最新版本
+     */
+    public function getFrameworkLastVersion() {
+        return (new CoreModuleService())->getFrameworkLastVersion();
+    }
+
+    /**
+     * 获取框架版本更新记录
+     */
+    public function getFrameworkVersionList() {
+        return (new CoreModuleService())->getFrameworkVersionList();
+    }
+
+    public function applyExperience()
+    {
+        return ( new CoreModuleService() )->applyExperience();
+    }
+
+    /**
+     * 获取应用/插件的版本更新记录
+     */
+    public function getAppVersionList($app_key) {
+        return (new CoreModuleService())->getAppVersionList($app_key);
+    }
+
+    /**
+     * 设置 本地服务器地址
+     * @param $data
+     * @return \app\model\sys\SysConfig|bool|\think\Model
+     */
+    public function setLocalCloudCompileConfig($data){
+
+        $data = [
+            'baseUri' => $data['url'],
+            'isOpen' => $data['is_open'],
+        ];
+        return $this->core_config_service->setConfig('LOCAL_CLOUD_COMPILE_CONFIG', $data);
+    }
+
+    /**
+     * 获取 本地服务器地址
+     * @param $data
+     * @return \app\model\sys\SysConfig|bool|array|\think\Model
+     */
+    public function getLocalCloudCompileConfig(){
+        $config = $this->core_config_service->getConfig('LOCAL_CLOUD_COMPILE_CONFIG')['value'] ?? [];
+        return [
+            'baseUri' => $config['baseUri'] ?? '',
+            'isOpen' => $config['isOpen'] ?? 0,
+        ];
+
+    }
+
+
+}

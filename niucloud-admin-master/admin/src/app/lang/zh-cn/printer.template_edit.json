@@ -1,0 +1,11 @@
+{
+  "templateInfoLabel": "模板信息",
+  "templateName": "模板名称",
+  "templateNamePlaceholder": "请输入模板名称",
+  "templateType": "模板类型",
+  "printTypeEmpty": "缺少打印模板类型",
+  "templateTypePlaceholder": "请选择模板类型",
+  "templateEditLabel": "模板编辑",
+  "preview": "预览图",
+  "printTemplateEmpty": "打印模板不存在"
+}

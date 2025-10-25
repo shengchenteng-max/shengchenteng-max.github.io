@@ -1,0 +1,15 @@
+{
+      "exportKey": "数据类型",
+      "exportKeyPlaceholder": "请输入主题关键字",
+      "exportStatus": "导出状态",
+      "exportStatusPlaceholder": "请选择导出状态",
+      "createTime": "导出时间",
+      "id": "编号",
+      "exportNum": "导出数据数量",
+      "filePath": "文件存储路径",
+      "fileSize": "文件大小",
+      "download": "下载",
+      "exportDeleteTips":"确定要删除该导出报表吗？",
+      "startDate": "开始时间",
+	"endDate": "结束时间"
+}

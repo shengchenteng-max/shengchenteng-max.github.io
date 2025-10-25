@@ -1,0 +1,15 @@
+{
+  "navTitle": "导航名称",
+  "navTitlePlaceholder": "请输入导航名称",
+  "navUrl": "链接地址",
+  "navUrlPlaceholder": "请选择链接地址",
+  "sort": "排序号",
+  "sortPlaceholder": "请输入排序号",
+  "sortTips": "排序号格式输入错误",
+  "isBlank": "新窗口打开",
+  "createTime": "创建时间",
+  "isShow": "是否显示",
+  "addNav": "添加导航",
+  "updateNav": "编辑导航",
+  "navDeleteTips": "确定要删除该数据吗？"
+}

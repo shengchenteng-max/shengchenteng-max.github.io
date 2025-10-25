@@ -1,0 +1,15 @@
+{
+    "personageInfo": "个人信息",
+    "memberHeadimg": "会员头像",
+    "edit": "修改",
+    "nickname": "会员昵称",
+    "username":"用户名",
+    "mobile":"手机号",
+    "updateMobile":"修改手机号",
+    "mobilePlaceholder": "请输入手机号",
+    "mobileTips":"请输入正确的手机号",
+    "mobileError": "请输入正确的手机号",
+    "codePlaceholder": "请输入手机验证码",
+    "cancel": "取消",
+    "confirm": "确定"
+}

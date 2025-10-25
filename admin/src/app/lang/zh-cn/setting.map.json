@@ -1,0 +1,11 @@
+{
+    "clickTutorial": "查看教程",
+    "clickSecretKey": "获取密钥",
+    "isOpen": "定位开关",
+    "validTime": "定位有效期",
+    "minutes": "分钟",
+    "validTimeTips": "过期后将重新获取定位信息",
+    "validTimePlaceholder": "请输入定位有效期",
+    "validTimeFormatTips": "格式输入错误",
+    "validTimeNotZeroTips": "定位有效期不能小于5分钟"
+}

@@ -1,0 +1,321 @@
+:root {
+    --aside-width: 210px;
+    --el-mask-color: rgba(255, 255, 255, 1);
+}
+
+html, body {
+    font-family: Helvetica Neue, Helvetica, Arial;
+}
+
+:root input:-webkit-autofill, :root textarea:-webkit-autofill, :root select:-webkit-autofill {
+    box-shadow: 0 0 50px 50px white inset;
+}
+
+:focus{
+    outline: none;
+}
+
+// 字体设置
+// 海报价格字体
+@font-face {
+    font-family: 'poster_price_font';
+    src: url('./font/OPLUSSANS3-REGULAR.ttf') format('truetype');
+}
+// 海报价格字体
+@font-face {
+    font-family: 'poster_default_font';
+    src: url('./font/PingFang-Medium.ttf') format('truetype');
+}
+
+// 以下最新，请勿改动 2024.5.25
+
+/** 数据展示面板 **/
+.el-statistic {
+    --el-statistic-content-font-size: 28px !important;
+}
+
+/** 背景 **/
+.bg {
+    background-color: #f5f7f9;
+}
+
+/** 边框 **/
+.border-color {
+    border-color: var(--el-border-color-lighter);
+}
+
+/** 表单 **/
+.page-form {
+
+    .input-width {
+        width: 300px;
+    }
+}
+
+.el-form {
+
+    // 提示
+    .form-tip {
+        font-size: var(--el-font-size-small);
+        line-height: 1;
+        width: 100%;
+        margin-top: 10px;
+        color: var(--el-color-info-light-3);
+    }
+}
+
+/** 面板标题 **/
+.panel-title {
+    font-size: 14px !important;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0 0 20px 0;
+}
+
+/** 筛选框 **/
+.table-search-wrap {
+
+    .el-card__body {
+        padding: 10px 0;
+    }
+
+    .el-form {
+        margin-bottom: -18px;
+    }
+}
+
+/** 底部浮动保存 **/
+.fixed-footer-wrap {
+    height: 48px;
+
+    .fixed-footer {
+        position: absolute;
+        z-index: 4;
+        right: 15px;
+        bottom: 0;
+        left: 15px;
+        display: flex;
+        height: inherit;
+        background: var(--el-bg-color-overlay);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        --tw-shadow: var(--el-box-shadow);
+        --tw-shadow-colored: var(--el-box-shadow);
+        align-items: center;
+        justify-content: center;
+        transition:var(--el-transition-duration) width ease-in-out,var(--el-transition-duration) padding-left ease-in-out,var(--el-transition-duration) padding-right ease-in-out;
+    }
+}
+/* 单行超出隐藏 */
+.using-hidden {
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    white-space: break-spaces;
+}
+
+/** 多行超出隐藏 **/
+.multi-hidden {
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/** 黑暗模式 **/
+html.dark {
+
+    .bg {
+        background-color: var(--el-bg-color) !important;
+    }
+
+    .table-search-wrap {
+        background-color: transparent !important;
+    }
+
+    .el-table {
+        --el-table-header-text-color: var(--el-text-color-secondary) !important;
+        --el-table-header-bg-color: var(--el-bg-color) !important;
+    }
+
+    // 编辑器
+    .edui-default {
+
+        .edui-editor, .edui-editor-toolbarboxinner {
+            background-color: var(--el-bg-color) !important;
+        }
+    }
+}
+
+
+
+
+// 以下全部开发完可以删除
+
+
+
+
+
+
+// .main-container{
+//     // background-color: #fff;
+//     background-color: var(--el-bg-color-overlay);
+//     min-height: calc(100vh - 84px);
+//     overflow: hidden;
+//     .full-container {
+//         height: calc(100vh - 122px);
+//     }
+// }
+
+
+
+
+
+// 表格
+
+
+
+
+// 背景颜色
+.base-bg{
+    background-color: transparent !important;
+    // background-color: #F5F7F9 !important; 原来的颜色
+}
+
+
+
+.region-input {
+    --region-input-border-color: var(--el-border-color);
+    --el-input-border-radius: 0;
+    display: flex;
+    box-shadow: 0 0 0 1px var(--region-input-border-color) inset;
+    border-radius: var(--el-input-border-radius,var(--el-border-radius-base));
+    height: calc(var(--el-input-inner-height) - 2px);
+    line-height: calc(var(--el-input-inner-height) - 2px);
+    transition: var(--el-transition-box-shadow);
+
+    &:hover {
+        --region-input-border-color: var(--el-color-primary);
+    }
+
+    .separator {
+        flex: 1;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 0 5px;
+        margin: 0;
+        font-size: 14px;
+        word-break: keep-all;
+        color: var(--el-text-color-primary);
+    }
+
+    .el-form-item {
+        flex: 1;
+    }
+
+    input {
+        padding: 0 10px;
+        appearance: none;
+        border: none;
+        outline: 0;
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        margin: 0;
+        text-align: center;
+        font-size: var(--el-font-size-base);
+        color: var(--el-text-color-regular);
+        background-color: transparent;
+
+        &::placeholder {
+            color: var(--el-text-color-placeholder);
+        }
+    }
+}
+
+
+// 温馨提示样式
+// .warm-prompt {
+//     background-color: var(--el-color-primary-light-9) !important;
+//     .el-icon,p,li{
+//         color: var(--el-color-primary-light-3);
+//     }
+//     .el-alert__content{
+//         padding: 0;
+//     }
+// }
+// html.dark {
+//     .warm-prompt {
+//         background-color: var(--el-color-primary-light-5) !important;
+//         .el-icon, p {
+//             color: var(--el-color-primary-dark-2);
+//         }
+//     }
+// }
+.app-item {
+	background: #f7f7f7;
+}
+html.dark {
+    .app-item {
+        background: #191a23;
+    }
+}
+
+// 详情的头部  完部修改完删除
+.detail-head {
+    display: flex;
+    margin: 15px;
+    align-items: center;
+
+    .left {
+        font-size: 14px;
+        line-height: 1;
+        margin-top: 1px;
+        cursor: pointer;
+        color: #666;
+    }
+
+    .adorn {
+        font-size: 14px;
+        margin: 0 12px;
+        color: #999;
+    }
+
+    .right{
+        font-size: 24px;
+    }
+}
+
+.t-window {
+    line-height: normal!important;
+    padding-top: 10px!important;
+    --t-main-background-color: #1d1f3a;
+    --t-main-font-color: #ececee;
+
+    .t-cmd-key {
+        font-weight: normal;
+        color: var(--t-main-font-color);
+    }
+
+    .t-log-box {
+        margin-block-start: 3px;
+        margin-block-end: 3px;
+        &:first-child {
+            display: none;
+        }
+    }
+    .t-content-normal .error {
+        display: none;
+
+        & + span {
+            color: red;
+        }
+    }
+}

@@ -1,0 +1,143 @@
+{extend name="base"/}
+{block name="resources"}
+<style>
+    .install-content-procedure .content-procedure-item:first-of-type{
+        background: url("INSTALL_IMG/complete_two.png") no-repeat center / contain;
+        color: #fff;
+    }
+    .install-content-procedure .content-procedure-item:nth-child(2), .install-content-procedure .content-procedure-item:nth-child(3){
+        background: url("INSTALL_IMG/complete_four.png") no-repeat center / contain;
+        color: #fff;
+    }
+    .install-content-procedure .content-procedure-item:nth-child(4){
+        background: url("INSTALL_IMG/complete_three.png") no-repeat center / contain;
+        color: #fff;
+    }
+    .install-content-procedure{border: none;}
+    .pop-link-wrap{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .pop-link-wrap .link-text{
+        font-size: 14px;
+    }
+    .pop-link-wrap .link-text:nth-child(2){
+        margin-top: 10px;
+    }
+    .pop-link-wrap .link-text:nth-child(2) a{
+        color: var(--base-color);
+    }
+    .pop-link-wrap .link-btn{
+        margin-top: 40px;
+    }
+
+    .pop-link-wrap button{
+        width: 160px;
+        height: 40px;
+        background: var(--base-color);
+        color: #fff !important;
+    }
+</style>
+{/block}
+{block name="main"}
+<div class="install-success">
+    <div class="install-success-box">
+        <div class="success-img">
+            <img class="install-success-pic" src="INSTALL_IMG/success_img.png" alt="">
+        </div>
+        <div class="install-success-text">
+            {if $is_build == 1}
+            <p class="install-success-title">恭喜您！已成功安装{$install_config.website_name}。</p>
+            {/if}
+            {if $is_build == 0}
+            <p class="install-success-title">安装过程已结束，您还需要手动编译，才能正常使用! </p>
+            <p class="install-success-desc">如何手动编译请参考如下链接 <a href="{$install_config.build_manual}" target="_blank">{$install_config.build_manual}</a></p>
+            {/if}
+            <p class="install-success-desc">建议删除安装目录install后使用</p>
+        </div>
+    </div>
+</div>
+<div class="other-links">
+    <div class="back">
+        <p class="other-links-title">您现在可以访问：</p>
+        <ul class="other-links-list">
+            <li class="other-links-item" onclick="visitFn('admin')">
+                <div  class="other-links-pic">
+                    <img src="INSTALL_IMG/web.jpg" alt="">
+                </div>
+                <a href="javascript:void(0)" class="other-links-text" >网站后台</a>
+            </li>
+            <li class="other-links-item" onclick="visitFn('web')">
+                <div  class="other-links-pic">
+                    <img src="INSTALL_IMG/site_web.png" alt="">
+                </div>
+                <a href="javascript:void(0)" class="other-links-text" >网站电脑端</a>
+            </li>
+            <li class="other-links-item" onclick="visitFn('wap')">
+                <div  class="other-links-pic">
+                    <img src="INSTALL_IMG/site_h5.png" alt="">
+                </div>
+                <a href="javascript:void(0)" class="other-links-text" >网站手机端</a>
+            </li>
+            {notempty name="$install_config['website_url']"}
+            <li class="other-links-item" onclick="window.open('{$install_config.website_url}')">
+                <div  class="other-links-pic">
+                    <img src="INSTALL_IMG/admin.jpg" alt="">
+                </div>
+                <a href="javascript:void(0)" class="other-links-text" >{$install_config.website_name}官方网站</a>
+            </li>
+            {/notempty}
+        </ul>
+    </div>
+</div>
+{/block}
+
+{block name="script"}
+<script>
+    ControlContent(4);
+    const visitFn = (type)=>{
+        let tips = window.localStorage.getItem('pageToLinkTips')
+        if(tips){
+            pageToLink(type)
+            return false
+        }
+        layer.open({
+            type: 1, // page 层类型
+            area: ['400px', '230px'],
+            title: '提示',
+            shade: 0.6, // 遮罩透明度
+            shadeClose: true, // 点击遮罩区域，关闭弹层
+            anim: 0, // 0-6 的动画形式，-1 不开启
+            content: `
+                <div class="pop-link-wrap">
+                    <p class="link-text">首次运行，请配置伪静态，才能正常使用。</p>
+                    <p class="link-text">伪静态如何配置请<a href="https://www.kancloud.cn/niushop/niushop_v6/3226724" class="other-links-text" target="_blank">参考手册</a></p>
+                    <p class="link-btn">
+                        <button onclick="pageToLink('${type}')" class="layui-btn visit-btn layui-border">确定</button>
+                        <button onclick="pageToLink('${type}', ${true})" class="layui-btn visit-btn layui-border">已配置,不需要在提示</button>
+                    </p>
+                </div>
+            `
+        });
+    }
+
+    // 页面跳转
+    function pageToLink(type,flag = false){
+        if(flag){
+           window.localStorage.setItem('pageToLinkTips', true)
+        }
+        if(type == 'admin'){
+            layer.closeAll()
+            window.open('{$root_url}/admin/')
+        }else if(type == 'web'){
+            layer.closeAll()
+            window.open('{$root_url}/web/')
+        }else if(type == 'wap'){
+            layer.closeAll()
+            window.open('{$root_url}/wap/')
+        }
+    }
+</script>
+{/block}

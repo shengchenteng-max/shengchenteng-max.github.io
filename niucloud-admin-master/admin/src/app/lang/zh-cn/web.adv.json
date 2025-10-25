@@ -1,0 +1,16 @@
+{
+  "addAdv": "添加广告",
+  "updateAdv": "编辑广告",
+  "advName": "广告名称",
+  "advNamePlaceholder": "请输入广告位名称",
+  "advPosition": "所属广告位",
+  "advUrl": "广告链接",
+  "advUrlPlaceholder": "请选择链接地址",
+  "advImg": "广告图片",
+  "advImagePlaceholder": "请上传广告图片",
+  "background": "背景色",
+  "sort": "排序号",
+  "sortPlaceholder": "请输入排序号",
+  "sortTips": "排序号格式输入错误",
+  "advDeleteTips": "确定要删除该数据吗？"
+}

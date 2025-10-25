@@ -1,0 +1,19 @@
+{
+  "linkPic": "图片",
+  "linkPicPlaceholder": "请输入图片",
+  "linkTitle": "标题",
+  "linkTitlePlaceholder": "请输入标题",
+  "linkUrl": "链接",
+  "linkUrlPlaceholder": "请输入链接",
+  "sort": "排序号",
+  "sortPlaceholder": "请输入排序号",
+  "sortTips": "排序号格式输入错误",
+  "isShow": "是否显示",
+  "isShowPlaceholder": "请输入是否显示",
+  "addFriendlyLink": "添加友情链接",
+  "updateFriendlyLink": "编辑友情链接",
+  "friendlyLinkDeleteTips": "确定要删除该数据吗？",
+  "startDate": "请选择开始时间",
+  "endDate": "请选择结束时间",
+  "addressTips": "链接格式错误"
+}

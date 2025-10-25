@@ -1,0 +1,12 @@
+{
+	"title": "自动回复",
+	"wechatAccessFlow": "接入流程",
+	"wechatSet": "公众号配置",
+	"customMenu": "自定义菜单",
+	"wechatTemplate": "模板消息",
+	"reply": "自动回复",
+	"keywordReply": "关键词回复",
+	"defaultReply": "默认回复",
+	"subscribeReply": "关注回复",
+	"replyDeleteTips": "确定要删除该条回复吗？"
+}

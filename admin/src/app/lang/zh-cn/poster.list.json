@@ -1,0 +1,18 @@
+{
+  "posterName": "海报名称",
+  "posterNamePlaceholder": "请输入海报名称",
+  "posterType": "海报类型",
+  "posterTypePlaceholder": "请选择海报类型",
+  "isDefault": "是否默认",
+  "defaultPoster": "默认海报",
+  "noDefault": "否",
+  "addPosterTitle": "添加海报",
+  "previewDialogTitle": "预览海报",
+  "title": "页面名称",
+  "status": "状态",
+  "updateTime": "更新时间",
+  "all": "全部",
+  "diyPosterDeleteTips": "确定要删除该自定义海报吗？",
+  "preview": "预览",
+  "modifyDefault": "设为默认"
+}

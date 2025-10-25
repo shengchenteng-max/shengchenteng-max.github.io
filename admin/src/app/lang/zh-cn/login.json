@@ -1,0 +1,10 @@
+{
+    "siteTitle": "NIUCLOUD-ADMIN",
+    "logging": "登录中",
+    "platform": "管理端",
+    "login" : "登录",
+    "adminLogin": "平台登录",
+    "userPlaceholder": "请输入您的账号",
+    "passwordPlaceholder": "请输入您的密码",
+	"manageAdminFramework": "管理系统后台框架"
+}

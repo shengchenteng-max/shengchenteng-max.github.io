@@ -1,0 +1,11 @@
+{
+  "tabPrinterManager": "打印机管理",
+  "tabPrinterTemplate": "打印模板",
+  "templateName": "模板名称",
+  "templateNamePlaceholder": "请输入模板名称",
+  "templateType": "模板类型",
+  "templateTypePlaceholder": "请选择模板类型",
+  "createTime": "创建时间",
+  "addPrinterTemplate": "添加小票打印模板",
+  "printerTemplateDeleteTips": "确定要删除该数据吗？"
+}
